@@ -25,10 +25,11 @@
       color: #888;
       margin-bottom: 1rem;
       letter-spacing: 0.02em;
-      animation: tackyGlow 3s ease infinite;
     }
-
-    @keyframes tackyGlow {
+.header-row h1 {
+    animation: tackyGlow 3s ease infinite;
+  }
+  @keyframes tackyGlow {
       0%, 100% {
         color: #e5201a;
        
@@ -169,6 +170,29 @@
     .fn  { color: #185FA5; }
     .cm  { color: #aaa; }
     .hl  { background: #FAEEDA; border-radius: 3px; padding: 0 2px; color: #633806; }
+
+
+/* --- Footer-----*/
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin: 0;
+      padding: 1rem;
+    }
+    .footer-title {
+      font-size: 12px;
+      color: #888;
+      letter-spacing: 0.02em;
+    }
+
+
+
+
+
+
+
 
   /* Dark Mode */
   .toggle-dark-btn{
