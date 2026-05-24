@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Closure Counter</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- load script.js with defer so the HTML is parsed first and DOM elements exist
+       before the external script runs -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="header-row">
+    <h1>closure <br> counter</h1>
+    <button class="reset-btn toggle-dark-btn" onclick="toggleDarkMode()">Dark Mode</button>
+  </div>
+  <div class="counter-card">
+    <p class="count-label">count</p>
+    <p class="display" id="display">0</p>
+    <p class="action-label" id="action-label">ready</p>
+
+    <div class="step-row">
+      <label for="step">step</label>
+      <input type="range" id="step" min="1" max="10" value="1" step="1" />
+      <span class="step-val" id="step-out">1</span>
+    </div>
+
+    <div class="btn-row">
+      <button onclick="handleIncrement()">+ increment</button>
+      <button onclick="handleDecrement()">− decrement</button>
+      <button onclick="handleReset()">↺ reset</button>
+    </div>
+
+    <p class="history-label">action history</p>
+    <div class="history" id="history"></div>
+  </div>
+
+<!-- CODING PREVIEW OF JAVASCRIPT if activated it will show the JS coding section -->
+<!--
+  <div class="code-section">
+    <p class="code-title">the closure powering this counter</p>
+    <pre><span class="kw">function</span> <span class="fn">makeCounter</span>(initialValue = 0) {
+  <span class="cm">// count lives inside makeCounter's scope</span>
+  <span class="kw">let</span> <span class="hl">count</span> = initialValue;
+  <span class="kw">let</span> <span class="hl">history</span> = [];
+
+  <span class="cm">// returned methods "close over" count & history</span>
+  <span class="kw">return</span> {
+    increment(step = 1) {
+      <span class="hl">count</span> += step;
+      <span class="hl">history</span>.push({ action: <span class="kw">"+"</span> + step, value: <span class="hl">count</span> });
+      <span class="kw">return</span> <span class="hl">count</span>;
+    },
+    decrement(step = 1) {
+      <span class="hl">count</span> -= step;
+      <span class="hl">history</span>.push({ action: <span class="kw">"-"</span> + step, value: <span class="hl">count</span> });
+      <span class="kw">return</span> <span class="hl">count</span>;
+    },
+    reset() {
+      <span class="hl">count</span> = initialValue;
+      <span class="hl">history</span> = [];
+      <span class="kw">return</span> <span class="hl">count</span>;
+    },
+    getHistory() { <span class="kw">return</span> [...<span class="hl">history</span>]; },
+    value()      { <span class="kw">return</span> <span class="hl">count</span>; },
+  };
+}
+
+<span class="cm">// count is private — no one can access it directly</span>
+<span class="kw">const</span> counter = <span class="fn">makeCounter</span>(0);</pre>
+  </div>
+</div> -->
+
+
+
+
+
+<script>
+  function toggleDarkMode() {
+    // Toggle a class on the body to switch styles for dark mode.
+    // The class is used by CSS selectors to change background and text colors.
+    document.body.classList.toggle('dark-mode');
+    const btn = document.querySelector('.toggle-dark-btn');
+    if (btn) {
+      // Update the button label so users know what mode will be enabled next.
+      btn.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+    }
+  }
+</script>
+</body>
+</html>
+ 

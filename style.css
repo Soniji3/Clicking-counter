@@ -1,0 +1,202 @@
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f5f3;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+      animation: tackyGlow 3s ease infinite;
+    }
+
+    @keyframes tackyGlow {
+      0%, 100% {
+        color: #e5201a;
+       
+      }
+      25% {
+        color: #21f0ff;
+      
+      }
+      50% {
+        color: #41ff5e;
+      
+      }
+      75% {
+        color: #ffab2d;
+       
+      }
+    }
+
+    /* Counter card */
+    .counter-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .count-label {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .display {
+      font-size: 72px;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+      transition: color 0.15s;
+    }
+    .display.positive { color: #185FA5; }
+    .display.negative { color: #A32D2D; }
+
+    .action-label {
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 1.5rem;
+      min-height: 18px;
+    }
+
+    /* Step slider */
+    .step-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .step-row label { font-size: 13px; color: #888; }
+    input[type="range"] {
+      width: 130px;
+      accent-color: #378ADD;
+      cursor: pointer;
+    }
+    .step-val { font-size: 13px; font-weight: 500; min-width: 18px; }
+
+    /* Buttons */
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      font-size: 14px;
+      font-family: inherit;
+      border: 1px solid #d5d5d5;
+      border-radius: 8px;
+      background: #fff;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: background 0.12s, transform 0.08s;
+    }
+    button:hover  { background: #f5f5f3; }
+    button:active { transform: scale(0.97); }
+
+    /* History pills */
+    .history-label {
+      font-size: 12px;
+      color: #bbb;
+      margin: 1.25rem 0 8px;
+    }
+    .history {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-height: 26px;
+    }
+    .pill {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .pill-up    { background: #E6F1FB; color: #0C447C; }
+    .pill-down  { background: #FCEBEB; color: #791F1F; }
+
+    /* Code block */
+    .code-section {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .code-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #888;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    pre {
+      font-family: 'Menlo', 'Consolas', monospace;
+      font-size: 13px;
+      line-height: 1.75;
+      overflow-x: auto;
+      color: #1a1a1a;
+    }
+    .kw  { color: #534AB7; }
+    .fn  { color: #185FA5; }
+    .cm  { color: #aaa; }
+    .hl  { background: #FAEEDA; border-radius: 3px; padding: 0 2px; color: #633806; }
+
+  /* Dark Mode */
+  .toggle-dark-btn{
+    margin-bottom: 12px;
+  }
+  /* make container a column flex so children can align individually
+       and keep the header, card, and code preview stacked vertically */
+    .container{ display:flex; flex-direction:column; }
+    /* header row: place title left and dark mode button right on same line
+       using flex so both elements stay aligned and responsive */
+    .header-row{ display:flex; justify-content:space-between; align-items:center; width:100%; height: 100px;}
+    .header-row h1{ margin: 0 auto; font-size: 24px; font-family: 'Orbitron', 'Arial Black', sans-serif; }
+    .reset-btn{ margin:0; }
+
+
+    body.dark-mode{ background:#111; color:#eee; }
+    body.dark-mode .counter-card{ background:#1f1f1f; border-color:#333; }
+    body.dark-mode .counter-card p,
+    body.dark-mode .counter-card label,
+    body.dark-mode .counter-card span,
+    body.dark-mode .counter-card button{ color:#eee; }
+    body.dark-mode button{ background:#252525; border-color:#444; color:#eee;  }
+    body.dark-mode input[type="range"]{ accent-color:#8ab4f8; }
+    body.dark-mode .history{ background:#141414; border-color:#333; }
+    body.dark-mode .step-val{ color:red; }
+    body.dark-mode .history{ background:#1f1f1f; }
+    body.dark-mode .pill{ background:#333; color:#eee; }
+
+    .toggle-dark-btn{
+      margin-right: 10%;
+    }
