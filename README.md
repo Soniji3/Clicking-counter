@@ -1,4 +1,4 @@
-<h1> Click Counter </h1>
+<h1> Click Counter <a href="https://soniji3.github.io/Clicking-counter/">Preview</a>  </h1>
 <p>
   A simple and interactive click counter web application built using HTML, CSS, and JavaScript. 
   The project allows users to increase, decrease, and reset the counter with a clean and responsive user interface. 
